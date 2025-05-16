@@ -1,6 +1,8 @@
-## 脸部突出特征
+## Distinguishing Facial Features - 脸部突出特征
 
-| id | 中文名 | 类型 |
+These are keys in setup.distinguishing_marks, but spaces in the code are replaced with underscores in the table below.
+
+| id | 中文名 | Type - 类型 |
 |:---|:------|:----|
 | button_nose | 圆头鼻 | nose |
 | delicate_nose | 细长鼻 | nose |
