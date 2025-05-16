@@ -28,7 +28,7 @@ const hair_colors = {
   "snow white": "#e9fdff",
   "iridescent opal": "#F0F8FF",
 
-  // 渐变
+  // 渐变 (Gradient)
   "ashen ombre": {type: "ombre", color: {color1:"#555555", color2:"#B2BEB5"}},
   "honey blonde ombre": {type: "ombre", color: {color1:"#B8860B", color2:"#F0E68C"}},
   "rose blonde ombre": {type: "ombre", color: {color1:"#DEB887", color2:"#F4C2C2"}},
@@ -66,7 +66,7 @@ const hair_colors = {
   // 发梢染色 (Tips) - 底色, 发梢颜色
   "dark with pink tips": {type: "tips", color: {color1: "#23211f", color2: "#FF69B4"}},
 
-  // 发根 - 区域1颜色, 区域2颜色
+  // 发根 - 区域1颜色, 区域2颜色 (Hair Roots – Region 1 Color, Region 2 Color)
   "blonde with black roots": {type: "roots", color: {color1: "#23211f", color2: "#efcd2c"}},
   
   // 隐藏式挑染 (Peekaboo Highlights) - [表层颜色, 隐藏层颜色] 或 [表层颜色, [隐藏色彩虹色]]
