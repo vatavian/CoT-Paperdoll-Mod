@@ -19,20 +19,20 @@ setup.Paperdoll.cache = {
         return JSON.stringify({ clothes, pc: relevantPCData});
     },
 
-    // 获取缓存
+    // 获取缓存 - Retrieve Cache
     get: function(key) {
         return this.canvasCache.get(key);
     },
 
-    // 设置缓存
+    // 设置缓存 - Set Cache
     set: function(key, canvas) {
-        // 如果缓存已满，删除最早的缓存
+        // 如果缓存已满，删除最早的缓存 - If the cache is full, delete the oldest entry
         if (this.canvasCache.size >= this.maxCacheSize) {
             const firstKey = this.canvasCache.keys().next().value;
             this.canvasCache.delete(firstKey);
         }
 
-        // 创建新的canvas并复制内容
+        // 创建新的canvas并复制内容 - Create a new canvas and copy the contents
         const cachedCanvas = document.createElement('canvas');
         cachedCanvas.width = canvas.width;
         cachedCanvas.height = canvas.height;
@@ -211,12 +211,12 @@ setup.Paperdoll.layerBlendMode = {
     'default': 'hard-light'
 }
 setup.Paperdoll.paperdollPC = async function(canvas) {
-    // 自定义缩放大小
+    // 自定义缩放大小 - Custom Zoom Level / Scale Size
     const SCALE_SIZE = null;
-    // 生成缓存key
+    // 生成缓存key - Generate cache key
     window.cacheKey = setup.Paperdoll.cache.generateKey(V.pc.clothes, V.pc);
 
-    // 检查是否有缓存
+    // 检查是否有缓存 - Check if cache exists
     const cachedCanvas = setup.Paperdoll.cache.get(cacheKey);
     if (cachedCanvas) {
         console.log('Using cached paperdoll');
@@ -241,13 +241,13 @@ setup.Paperdoll.paperdollPC = async function(canvas) {
         return;
     }
 
-    // 原有的渲染逻辑
+    // 原有的渲染逻辑 - Original rendering logic
     window.breastType = null;
     window.hoodState = "";
 
     let p = new PaperDollSystem(canvas);
     const baseURL = `res/paperdoll/`;
-    // 加载人模
+    // 加载人模 - Load base human model
     await p.loadBaseModel(`${baseURL}body/basenoarms.png`);
 
     V.pc.get_clothingItems_classes();
@@ -258,10 +258,10 @@ setup.Paperdoll.paperdollPC = async function(canvas) {
     let backClothes = [];
     [p, bodyClothes, leftHandClothes, rightHandClothes, backClothes] = await setup.Paperdoll.clotheLayers(p, clothes, bodyClothes, leftHandClothes, rightHandClothes, backClothes);
 
-    // 其他图层插入点
+    // 其他图层插入点 - Insertion Points for Other Layers
     // Object.assign(PCLayers, {xxxx});
 
-    // 后景替换插入点
+    // 后景替换插入点 - Background Replacement Insertion Point
     let PCLayers = setup.Paperdoll.models.main.layer;
     let content = {p, baseURL, backClothes, leftHandClothes, rightHandClothes, bodyClothes};
 
@@ -276,7 +276,7 @@ setup.Paperdoll.paperdollPC = async function(canvas) {
         await PCLayers[layer].load(content);
     }
 
-    // 前景替换插入点
+    // 前景替换插入点 - Foreground Replacement Insertion Point
 
     function calculateScale(x) {
         if (x <= 400) return -4.5413062686002426e-8 * x * x * x + 0.000051298595610111764 * x * x - 0.018759300595236547 * x + 3.752380952380881
@@ -327,7 +327,7 @@ setup.Paperdoll.mirrorPC = function() {
 }
 
 let oldversion = false;
-// 旧版兼容
+// 旧版兼容 - Backward Compatibility
 for (let type of window.addonBeautySelectorAddon.getTypeOrder()) {
     let imgListRef = type.imgListRef;
     if (!imgListRef.get('res/paperdoll/body/basenoarms-f.png')){continue}
