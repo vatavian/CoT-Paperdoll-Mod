@@ -15,9 +15,9 @@ This is a fork of the original mod by HCPTangHY, translated to English.
 
 ## 📚 Data Guide
 
-* **Naming Conventions**: Refer to the documentation for standard naming practices.
-* **Hairstyle Collection**: A comprehensive list of hairstyles is available.
-* **Distinctive Features**: Guidelines on highlighting unique character features.
+* **Naming Conventions**: [Folder structure for images.](https://github.com/vatavian/CoT-Paperdoll-Mod/blob/custom/doc/ImageFileNamingConvention.md)
+* **Hairstyles**: [List of hairstyle names.](https://github.com/vatavian/CoT-Paperdoll-Mod/blob/custom/doc/hairstyle.md)
+* **Distinctive Features**: [Names of unique character features](https://github.com/vatavian/CoT-Paperdoll-Mod/blob/custom/doc/dmarks.md)
 * **Clothing Data**: Due to the large volume, specific data isn't provided here. Use the Modloader interface's "Export All Current Data" feature to find `js/database_clothes.js`, which contains all clothing data.
 
 ---
